@@ -1,29 +1,29 @@
 {
-  "updated": "2026-09-15 08:26:40 UTC",
+  "updated": "2026-09-15 08:34:37 UTC",
   "adjust": "0",
   "ok": [
     {
       "key": "SH600004",
       "name": "白云机场",
       "source": "yahoo",
-      "count": 142,
-      "first": "2015-01-01",
+      "count": 2843,
+      "first": "2015-01-05",
       "last": "2026-09-15"
     },
     {
       "key": "SZ000001",
       "name": "平安银行",
       "source": "yahoo",
-      "count": 142,
-      "first": "2015-01-01",
+      "count": 2843,
+      "first": "2015-01-05",
       "last": "2026-09-15"
     },
     {
       "key": "SH000300",
       "name": "沪深300",
       "source": "yahoo",
-      "count": 275,
-      "first": "2021-03-08",
+      "count": 1299,
+      "first": "2021-03-11",
       "last": "2026-09-15"
     }
   ],
