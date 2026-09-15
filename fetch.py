@@ -16,6 +16,7 @@
 """
 
 import argparse
+import calendar
 import csv
 import io
 import json
@@ -88,8 +89,9 @@ def http_get(url, referer="https://quote.eastmoney.com/", encoding="utf-8"):
 
 
 def _row(date, close, high, low, volume):
-    return {"date": date, "close": float(close), "high": float(high),
-            "low": float(low), "volume": int(float(volume or 0))}
+    return {"date": date, "close": round(float(close), 4),
+            "high": round(float(high), 4), "low": round(float(low), 4),
+            "volume": int(float(volume or 0))}
 
 
 # -------------------------------------------------------------------- Yahoo
@@ -109,8 +111,19 @@ def fetch_yahoo(market, code):
     注意：从境外家用 IP 常被 429，但 GitHub Actions 的服务器 IP 通常没问题。
     """
     symbol = yahoo_symbol(market, code)
+    # 注意：不能用 range=max —— 区间太长时 Yahoo 会把粒度自动降到月线。
+    # 必须用 period1/period2 明确指定区间，再校验返回的粒度确实是日线。
+    if START_DATE:
+        period1 = calendar.timegm(time.strptime(START_DATE, "%Y-%m-%d"))
+    else:
+        period1 = 0
+    params = urllib.parse.urlencode({
+        "interval": "1d",
+        "period1": max(period1, 0),
+        "period2": int(time.time()) + 86400,
+    })
     url = ("https://query1.finance.yahoo.com/v8/finance/chart/"
-           f"{urllib.parse.quote(symbol)}?interval=1d&range=max")
+           f"{urllib.parse.quote(symbol)}?{params}")
     payload = json.loads(http_get(url, referer="https://finance.yahoo.com/"))
 
     chart = payload.get("chart") or {}
@@ -120,13 +133,18 @@ def fetch_yahoo(market, code):
     if not result:
         raise RuntimeError("Yahoo 返回空 result")
 
+    meta = result.get("meta") or {}
+    gran = meta.get("dataGranularity")
+    if gran and gran != "1d":
+        raise RuntimeError(f"返回的是 {gran} 粒度而非日线，拒绝使用")
+
     stamps = result.get("timestamp") or []
     quote = ((result.get("indicators") or {}).get("quote") or [{}])[0]
     closes = quote.get("close") or []
     highs = quote.get("high") or []
     lows = quote.get("low") or []
     vols = quote.get("volume") or []
-    offset = (result.get("meta") or {}).get("gmtoffset", 0) or 0
+    offset = meta.get("gmtoffset", 0) or 0
 
     rows = []
     for i, ts in enumerate(stamps):
@@ -301,12 +319,24 @@ def fetch(market, code):
         try:
             log(f"尝试数据源 {name}")
             rows = fn(market, code)
+            if rows and not looks_daily(clean(rows)):
+                raise RuntimeError("拿到的不是日线数据（间隔过大），拒绝使用")
             if rows:
                 return rows, name
             errors.append(f"{name}: 空结果")
         except Exception as exc:                      # noqa: BLE001
             errors.append(f"{name}: {exc}")
     raise RuntimeError("\n  ".join([""] + errors))
+
+
+def looks_daily(rows):
+    """粗略判断是不是日线：交易日平均间隔应在 1~4 天之间。"""
+    if len(rows) < 30:
+        return True                      # 样本太少不判断
+    d0 = calendar.timegm(time.strptime(rows[0]["date"], "%Y-%m-%d"))
+    d1 = calendar.timegm(time.strptime(rows[-1]["date"], "%Y-%m-%d"))
+    avg_gap = (d1 - d0) / 86400 / (len(rows) - 1)
+    return avg_gap <= 4.0
 
 
 def clean(rows):
@@ -320,7 +350,20 @@ def clean(rows):
 
 def read_securities(path):
     out = []
-    with open(path, encoding="utf-8-sig", newline="") as fh:
+    raw = open(path, "rb").read()
+    text = None
+    for enc in ("utf-8-sig", "utf-8", "gbk", "gb18030"):
+        try:
+            text = raw.decode(enc)
+            if enc not in ("utf-8-sig", "utf-8"):
+                print(f"提示：securities.csv 是 {enc} 编码，已自动转换。"
+                      f"建议改存为 UTF-8。")
+            break
+        except UnicodeDecodeError:
+            continue
+    if text is None:
+        raise RuntimeError("securities.csv 编码无法识别，请另存为 UTF-8")
+    with io.StringIO(text, newline="") as fh:
         for row in csv.DictReader(fh):
             code = (row.get("code") or "").strip()
             market = (row.get("market") or "").strip().upper()
@@ -343,6 +386,7 @@ def run_test(target):
     print(f"  条数:   {len(rows)}")
     print(f"  区间:   {rows[0]['date']} → {rows[-1]['date']}")
     print(f"  最后一条: {json.dumps(rows[-1], ensure_ascii=False)}")
+    print(f"  日线检查: {'通过' if looks_daily(rows) else '不通过（疑似月线/周线）'}")
     print("\n请把上面的 close 和行情软件里的收盘价核对一致。")
     return 0
 
