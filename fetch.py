@@ -34,6 +34,7 @@ TIMEOUT = 25
 RETRIES = 4
 BASE_WAIT = 2.5          # 重试间隔基数，逐次递增
 PAUSE_BETWEEN = 1.5      # 批量模式下每个标的之间的间隔
+RETRY_PAUSE = 8.0        # 第二轮重试时的间隔，拉长以避开限流
 
 # 复权方式：0=不复权 1=前复权 2=后复权
 # 默认不复权 —— 见 README，这对 PP 很重要，不要随便改成 1
@@ -471,9 +472,9 @@ def main():
         return 1
 
     os.makedirs(OUT_DIR, exist_ok=True)
-    index, failures = [], []
 
-    for sec in securities:
+    def process(sec, index, failures):
+        """抓一个标的并写文件。成功返回 True。"""
         key = sec["market"] + sec["code"]
         label = f"{key} {sec['name']}".strip()
         try:
@@ -488,10 +489,30 @@ def main():
                           "count": len(rows), "first": rows[0]["date"],
                           "last": rows[-1]["date"]})
             print(f"OK   {label}  {len(rows)} 条  最后 {rows[-1]['date']}  [{source}]")
+            return True
         except Exception as exc:                      # noqa: BLE001
             failures.append({"key": key, "error": str(exc)})
             print(f"FAIL {label}  {exc}")
+            return False
+
+    # ---- 第一轮
+    index, failures = [], []
+    for sec in securities:
+        process(sec, index, failures)
         time.sleep(PAUSE_BETWEEN + random.uniform(0, 1.0))
+
+    # ---- 第二轮：只重试失败的，间隔拉长。
+    # 大陆数据源的失败多是随机限流，隔久一点重来通常就过了。
+    if failures:
+        retry_keys = {f["key"] for f in failures}
+        retry_list = [s for s in securities
+                      if s["market"] + s["code"] in retry_keys]
+        print(f"\n第一轮失败 {len(retry_list)} 个，等待 30 秒后重试……")
+        time.sleep(30)
+        failures = []
+        for sec in retry_list:
+            process(sec, index, failures)
+            time.sleep(RETRY_PAUSE + random.uniform(0, 3.0))
 
     with open(os.path.join(OUT_DIR, "_index.json"), "w", encoding="utf-8") as fh:
         json.dump({"updated": time.strftime("%Y-%m-%d %H:%M:%S UTC",
