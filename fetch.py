@@ -94,12 +94,51 @@ def _row(date, close, high, low, volume):
             "volume": int(float(volume or 0))}
 
 
+# ---------------------------------------------------------------- 指数识别
+
+# A 股指数：上证系列 000xxx（在 SH 市场）、深证系列 399xxx（在 SZ 市场）
+# 港股指数：HSI / HSCEI / HSTECH 等字母代码，市场写 HKI
+HK_INDEX_EM = {                    # 港股指数 → 东财 secid
+    "HSI": "100.HSI",              # 恒生指数
+    "HSCEI": "100.HSCEI",          # 恒生中国企业指数
+    "HSTECH": "100.HSTECH",        # 恒生科技指数
+}
+
+
+def is_index(market, code):
+    """判断是不是指数。指数和个股在各数据源的代码规则不同。"""
+    if market == "HKI":
+        return True
+    if market == "SH" and code.startswith("000"):
+        return True
+    if market == "SZ" and code.startswith("399"):
+        return True
+    return False
+
+
+def em_secid(market, code):
+    """东财的 secid。指数和个股规则不同。"""
+    if market == "HKI":
+        sec = HK_INDEX_EM.get(code.upper())
+        if not sec:
+            raise RuntimeError(f"未知的港股指数代码 {code}")
+        return sec
+    if market == "HK":
+        return f"116.{code.zfill(5)}"
+    if is_index(market, code):
+        # 上证指数系列前缀 1，深证指数系列前缀 0 —— 和个股一致
+        return f"{EM_PREFIX[market]}.{code}"
+    return f"{EM_PREFIX[market]}.{code}"
+
+
 # -------------------------------------------------------------------- Yahoo
 
 YH_SUFFIX = {"SH": ".SS", "SZ": ".SZ", "BJ": ".BJ", "HK": ".HK"}
 
 
 def yahoo_symbol(market, code):
+    if market == "HKI":
+        raise RuntimeError("港股指数不走 Yahoo")
     if market == "HK":
         return code.lstrip("0").zfill(4) + ".HK"
     return code + YH_SUFFIX[market]
@@ -169,8 +208,7 @@ def fetch_eastmoney(market, code):
       f51 日期, f52 开, f53 收, f54 高, f55 低, f56 量, f57 额
     即 [0]=日期 [2]=收 [3]=高 [4]=低 [5]=量
     """
-    secid = (f"116.{code.zfill(5)}" if market == "HK"
-             else f"{EM_PREFIX[market]}.{code}")
+    secid = em_secid(market, code)
     params = {
         "secid": secid,
         "ut": "fa5fd1943c7b386f172d6893dbfba10b",
@@ -236,6 +274,8 @@ def _find_kline_list(node):
 
 def fetch_tencent(market, code):
     """腾讯日线：[日期, 开, 收, 高, 低, 量]"""
+    if market == "HKI":
+        raise RuntimeError("港股指数不走腾讯")
     symbol = TX_PREFIX[market] + (code.zfill(5) if market == "HK" else code)
     suffix = {"0": "", "1": "qfq", "2": "hfq"}[ADJUST]
     url = ("https://web.ifzq.gtimg.cn/appstock/app/fqkline/get"
@@ -312,16 +352,32 @@ SOURCE_ORDER = [s.strip() for s in os.environ.get(
 def fetch(market, code):
     """按 SOURCE_ORDER 依次尝试。返回 (rows, 实际使用的源)。"""
     errors = []
-    for name in SOURCE_ORDER:
+    order = list(SOURCE_ORDER)
+    if is_index(market, code):
+        # Yahoo 对 A 股/港股指数覆盖很差（常常只给一个数据点），
+        # 指数一律优先走东财。
+        order = ["eastmoney"] + [s for s in order if s != "eastmoney"]
+    for name in order:
         fn = ALL_SOURCES.get(name)
         if fn is None:
             continue
         try:
             log(f"尝试数据源 {name}")
             rows = fn(market, code)
-            if rows and not looks_daily(clean(rows)):
+            cleaned = clean(rows) if rows else []
+            if cleaned and not looks_daily(cleaned):
                 raise RuntimeError("拿到的不是日线数据（间隔过大），拒绝使用")
-            if rows:
+            # 条数过少通常意味着数据源不认这个代码。
+            # 但新上市标的本来就少，用「首条日期距今不足 MIN_ROWS 个交易日」豁免。
+            if cleaned and len(cleaned) < MIN_ROWS:
+                first_ts = calendar.timegm(
+                    time.strptime(cleaned[0]["date"], "%Y-%m-%d"))
+                trading_days = (time.time() - first_ts) / 86400 * (5 / 7)
+                if trading_days > MIN_ROWS * 1.5:
+                    raise RuntimeError(
+                        f"只返回 {len(cleaned)} 条（首条 {cleaned[0]['date']}），"
+                        f"数据源很可能不认这个代码")
+            if cleaned:
                 return rows, name
             errors.append(f"{name}: 空结果")
         except Exception as exc:                      # noqa: BLE001
@@ -329,10 +385,15 @@ def fetch(market, code):
     raise RuntimeError("\n  ".join([""] + errors))
 
 
+MIN_ROWS = int(os.environ.get("MIN_ROWS", "60"))
+
+
 def looks_daily(rows):
     """粗略判断是不是日线：交易日平均间隔应在 1~4 天之间。"""
+    if len(rows) < 5:
+        return False                     # 太少，几乎可以肯定是坏数据
     if len(rows) < 30:
-        return True                      # 样本太少不判断
+        return True                      # 新股可能确实就这么少，交给 MIN_ROWS 判
     d0 = calendar.timegm(time.strptime(rows[0]["date"], "%Y-%m-%d"))
     d1 = calendar.timegm(time.strptime(rows[-1]["date"], "%Y-%m-%d"))
     avg_gap = (d1 - d0) / 86400 / (len(rows) - 1)
@@ -369,8 +430,8 @@ def read_securities(path):
             market = (row.get("market") or "").strip().upper()
             if not code or code.startswith("#"):
                 continue
-            if market not in EM_PREFIX:
-                print(f"  跳过 {code}：market 须为 SH/SZ/BJ/HK，收到 '{market}'")
+            if market not in EM_PREFIX and market != "HKI":
+                print(f"  跳过 {code}：market 须为 SH/SZ/BJ/HK/HKI，收到 '{market}'")
                 continue
             out.append({"code": code, "market": market,
                         "name": (row.get("name") or "").strip()})
@@ -422,9 +483,7 @@ def main():
                 raise RuntimeError("清洗后没有数据")
             with open(os.path.join(OUT_DIR, key + ".json"), "w",
                       encoding="utf-8") as fh:
-                fh.write("[\n" + ",\n".join(
-                    json.dumps(r, ensure_ascii=False, separators=(",", ":"))
-                    for r in rows) + "\n]\n")
+                json.dump(rows, fh, ensure_ascii=False, separators=(",", ":"))
             index.append({"key": key, "name": sec["name"], "source": source,
                           "count": len(rows), "first": rows[0]["date"],
                           "last": rows[-1]["date"]})
