@@ -137,9 +137,20 @@ def em_secid(market, code):
 YH_SUFFIX = {"SH": ".SS", "SZ": ".SZ", "BJ": ".BJ", "HK": ".HK"}
 
 
+# 港股指数在 Yahoo 的符号（带 ^ 前缀）
+HK_INDEX_YH = {
+    "HSI": "^HSI",
+    "HSCEI": "^HSCE",
+    "HSTECH": "^HSTECH",
+}
+
+
 def yahoo_symbol(market, code):
     if market == "HKI":
-        raise RuntimeError("港股指数不走 Yahoo")
+        sym = HK_INDEX_YH.get(code.upper())
+        if not sym:
+            raise RuntimeError(f"未知的港股指数代码 {code}")
+        return sym
     if market == "HK":
         return code.lstrip("0").zfill(4) + ".HK"
     return code + YH_SUFFIX[market]
@@ -355,8 +366,8 @@ def fetch(market, code):
     errors = []
     order = list(SOURCE_ORDER)
     if is_index(market, code):
-        # Yahoo 对 A 股/港股指数覆盖很差（常常只给一个数据点），
-        # 指数一律优先走东财。
+        # Yahoo 对 A 股指数覆盖很差（常常只给一个数据点），指数优先走东财；
+        # 但 Yahoo 保留在后面当后路——港股指数东财的 secid 不一定齐全。
         order = ["eastmoney"] + [s for s in order if s != "eastmoney"]
     for name in order:
         fn = ALL_SOURCES.get(name)
