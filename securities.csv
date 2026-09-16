@@ -34,8 +34,8 @@ code,market,name
 002262,SZ,恩华药业
 002311,SZ,海大集团
 HSI,HKI,恒生指数
-HSCE,HKI,恒生中国企业指数
 HSTECH,HKI,恒生科技指数
+HSCEI,HKI,恒生中国企业指数
 00700,HK,腾讯控股
 01810,HK,小米集团
 09988,HK,阿里巴巴
