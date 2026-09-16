@@ -422,7 +422,9 @@ def main():
                 raise RuntimeError("清洗后没有数据")
             with open(os.path.join(OUT_DIR, key + ".json"), "w",
                       encoding="utf-8") as fh:
-                json.dump(rows, fh, ensure_ascii=False, separators=(",", ":"))
+                fh.write("[\n" + ",\n".join(
+                    json.dumps(r, ensure_ascii=False, separators=(",", ":"))
+                    for r in rows) + "\n]\n")
             index.append({"key": key, "name": sec["name"], "source": source,
                           "count": len(rows), "first": rows[0]["date"],
                           "last": rows[-1]["date"]})
