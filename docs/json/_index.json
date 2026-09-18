@@ -1,328 +1,332 @@
 {
-  "updated": "2026-09-17 11:03:14 UTC",
+  "updated": "2026-09-18 09:59:42 UTC",
   "adjust": "0",
   "ok": [
     {
       "key": "SH000300",
       "name": "沪深300",
       "source": "eastmoney",
-      "count": 2847,
+      "count": 2848,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
+    },
+    {
+      "key": "SH000905",
+      "name": "中证500",
+      "source": "eastmoney",
+      "count": 2848,
+      "first": "2015-01-05",
+      "last": "2026-09-18"
     },
     {
       "key": "SH000001",
       "name": "上证指数",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH600004",
       "name": "白云机场",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH600009",
       "name": "上海机场",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH600030",
       "name": "中信证券",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH600031",
       "name": "三一重工",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH600660",
       "name": "福耀玻璃",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH600887",
       "name": "伊利股份",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH603288",
       "name": "海天味业",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH603866",
       "name": "桃李面包",
       "source": "yahoo",
-      "count": 2609,
+      "count": 2610,
       "first": "2015-12-22",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ000089",
       "name": "深圳机场",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ000333",
       "name": "美的集团",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ000651",
       "name": "格力电器",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ002027",
       "name": "分众传媒",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH600406",
       "name": "国电南瑞",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH600519",
       "name": "贵州茅台",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH601899",
       "name": "紫金矿业",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH601965",
       "name": "中国汽研",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SH603605",
       "name": "珀莱雅",
       "source": "yahoo",
-      "count": 2146,
+      "count": 2147,
       "first": "2017-11-15",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ000063",
       "name": "中兴通讯",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ000333",
       "name": "美的集团",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ000568",
       "name": "泸州老窖",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ000858",
       "name": "五 粮 液",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ000963",
       "name": "华东医药",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ000977",
       "name": "浪潮信息",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ000999",
       "name": "华润三九",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ002078",
       "name": "太阳纸业",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ002262",
       "name": "恩华药业",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "SZ002311",
       "name": "海大集团",
       "source": "yahoo",
-      "count": 2845,
+      "count": 2846,
       "first": "2015-01-05",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "HKIHSI",
       "name": "恒生指数",
       "source": "yahoo",
-      "count": 2881,
+      "count": 2882,
       "first": "2015-01-02",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "HKIHSCEI",
       "name": "恒生中国企业指数",
       "source": "yahoo",
-      "count": 2881,
+      "count": 2882,
       "first": "2015-01-02",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "HK00700",
       "name": "腾讯控股",
       "source": "yahoo",
-      "count": 2884,
+      "count": 2885,
       "first": "2015-01-02",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "HK01810",
       "name": "小米集团",
       "source": "yahoo",
-      "count": 2018,
+      "count": 2019,
       "first": "2018-07-09",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "HK09988",
       "name": "阿里巴巴",
       "source": "yahoo",
-      "count": 1675,
+      "count": 1676,
       "first": "2019-11-26",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "HK09633",
       "name": "农夫山泉",
       "source": "yahoo",
-      "count": 1481,
+      "count": 1482,
       "first": "2020-09-08",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "HK02513",
       "name": "智谱",
       "source": "yahoo",
-      "count": 171,
+      "count": 172,
       "first": "2026-01-08",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     },
     {
       "key": "HK09992",
       "name": "泡泡玛特",
       "source": "yahoo",
-      "count": 1417,
+      "count": 1418,
       "first": "2020-12-11",
-      "last": "2026-09-17"
+      "last": "2026-09-18"
     }
   ],
   "failed": [
     {
-      "key": "SH000905",
-      "error": "\n  eastmoney: 所有镜像均失败 → 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
-    },
-    {
       "key": "SH000852",
-      "error": "\n  eastmoney: 所有镜像均失败 → 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
+      "error": "\n  eastmoney: 所有镜像均失败 → 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
     },
     {
       "key": "SZ399006",
-      "error": "\n  eastmoney: 所有镜像均失败 → 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
+      "error": "\n  eastmoney: 所有镜像均失败 → push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
     },
     {
       "key": "SH000688",
-      "error": "\n  eastmoney: 所有镜像均失败 → 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
+      "error": "\n  eastmoney: 所有镜像均失败 → 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
     },
     {
       "key": "SH000922",
-      "error": "\n  eastmoney: 所有镜像均失败 → push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
+      "error": "\n  eastmoney: 所有镜像均失败 → push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
     },
     {
       "key": "HKIHSTECH",
-      "error": "\n  eastmoney: 所有镜像均失败 → 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 请求失败（重试 4 次）: HTTP Error 404: Not Found\n  tencent: 港股指数不走腾讯\n  163: 网易不支持该市场（仅沪深）"
+      "error": "\n  eastmoney: 所有镜像均失败 → 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 请求失败（重试 4 次）: HTTP Error 404: Not Found\n  tencent: 港股指数不走腾讯\n  163: 网易不支持该市场（仅沪深）"
     }
   ]
 }
