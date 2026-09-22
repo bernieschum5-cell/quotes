@@ -1,23 +1,7 @@
 {
-  "updated": "2026-09-22 09:58:35 UTC",
+  "updated": "2026-09-22 11:08:32 UTC",
   "adjust": "0",
   "ok": [
-    {
-      "key": "SH000300",
-      "name": "沪深300",
-      "source": "eastmoney",
-      "count": 2850,
-      "first": "2015-01-05",
-      "last": "2026-09-22"
-    },
-    {
-      "key": "SZ399006",
-      "name": "创业板指",
-      "source": "eastmoney",
-      "count": 2850,
-      "first": "2015-01-05",
-      "last": "2026-09-22"
-    },
     {
       "key": "SH000001",
       "name": "上证指数",
@@ -305,32 +289,36 @@
       "count": 1420,
       "first": "2020-12-11",
       "last": "2026-09-22"
-    },
-    {
-      "key": "SH000852",
-      "name": "中证1000",
-      "source": "eastmoney",
-      "count": 2850,
-      "first": "2015-01-05",
-      "last": "2026-09-22"
     }
   ],
   "failed": [
     {
+      "key": "SH000300",
+      "error": "\n  eastmoney: 所有镜像均失败 → 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
+    },
+    {
       "key": "SH000905",
+      "error": "\n  eastmoney: 所有镜像均失败 → 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
+    },
+    {
+      "key": "SH000852",
+      "error": "\n  eastmoney: 所有镜像均失败 → push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
+    },
+    {
+      "key": "SZ399006",
       "error": "\n  eastmoney: 所有镜像均失败 → 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
     },
     {
       "key": "SH000688",
-      "error": "\n  eastmoney: 所有镜像均失败 → push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
+      "error": "\n  eastmoney: 所有镜像均失败 → 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
     },
     {
       "key": "SH000922",
-      "error": "\n  eastmoney: 所有镜像均失败 → 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
+      "error": "\n  eastmoney: 所有镜像均失败 → 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
     },
     {
       "key": "HKIHSTECH",
-      "error": "\n  eastmoney: 所有镜像均失败 → 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 请求失败（重试 4 次）: HTTP Error 404: Not Found\n  tencent: 港股指数不走腾讯\n  163: 网易不支持该市场（仅沪深）"
+      "error": "\n  eastmoney: 所有镜像均失败 → 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 请求失败（重试 4 次）: HTTP Error 404: Not Found\n  tencent: 港股指数不走腾讯\n  163: 网易不支持该市场（仅沪深）"
     }
   ]
 }
