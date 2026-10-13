@@ -1,22 +1,62 @@
 {
-  "updated": "2026-10-12 11:11:42 UTC",
+  "updated": "2026-10-13 09:46:20 UTC",
   "adjust": "0",
   "ok": [
+    {
+      "key": "SH000300",
+      "name": "沪深300",
+      "source": "eastmoney",
+      "count": 2859,
+      "first": "2015-01-05",
+      "last": "2026-10-13"
+    },
     {
       "key": "SH000905",
       "name": "中证500",
       "source": "eastmoney",
-      "count": 2858,
+      "count": 2859,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
+    },
+    {
+      "key": "SH000852",
+      "name": "中证1000",
+      "source": "eastmoney",
+      "count": 2859,
+      "first": "2015-01-05",
+      "last": "2026-10-13"
+    },
+    {
+      "key": "SZ399006",
+      "name": "创业板指",
+      "source": "eastmoney",
+      "count": 2859,
+      "first": "2015-01-05",
+      "last": "2026-10-13"
+    },
+    {
+      "key": "SH000688",
+      "name": "科创50",
+      "source": "eastmoney",
+      "count": 1641,
+      "first": "2019-12-31",
+      "last": "2026-10-13"
+    },
+    {
+      "key": "SH000922",
+      "name": "中证红利",
+      "source": "eastmoney",
+      "count": 2859,
+      "first": "2015-01-05",
+      "last": "2026-10-13"
     },
     {
       "key": "SH000001",
       "name": "上证指数",
-      "source": "yahoo",
-      "count": 2856,
+      "source": "eastmoney",
+      "count": 2859,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH600004",
@@ -24,7 +64,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH600009",
@@ -32,7 +72,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH600030",
@@ -40,7 +80,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH600031",
@@ -48,7 +88,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH600660",
@@ -56,7 +96,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH600887",
@@ -64,7 +104,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH603288",
@@ -72,7 +112,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH603866",
@@ -80,7 +120,7 @@
       "source": "yahoo",
       "count": 2620,
       "first": "2015-12-22",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ000089",
@@ -88,7 +128,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ000333",
@@ -96,7 +136,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ000651",
@@ -104,7 +144,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ002027",
@@ -112,7 +152,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH600406",
@@ -120,7 +160,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH600519",
@@ -128,7 +168,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH601899",
@@ -136,7 +176,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH601965",
@@ -144,7 +184,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SH603605",
@@ -152,7 +192,7 @@
       "source": "yahoo",
       "count": 2157,
       "first": "2017-11-15",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ000063",
@@ -160,7 +200,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ000333",
@@ -168,7 +208,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ000568",
@@ -176,7 +216,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ000858",
@@ -184,7 +224,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ000963",
@@ -192,7 +232,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ000977",
@@ -200,7 +240,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ000999",
@@ -208,7 +248,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ002078",
@@ -216,7 +256,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ002262",
@@ -224,7 +264,7 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "SZ002311",
@@ -232,23 +272,23 @@
       "source": "yahoo",
       "count": 2856,
       "first": "2015-01-05",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "HKIHSI",
       "name": "恒生指数",
-      "source": "yahoo",
-      "count": 2897,
+      "source": "eastmoney",
+      "count": 2898,
       "first": "2015-01-02",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "HKIHSCEI",
       "name": "恒生中国企业指数",
-      "source": "yahoo",
-      "count": 2897,
+      "source": "eastmoney",
+      "count": 2898,
       "first": "2015-01-02",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "HK00700",
@@ -256,7 +296,7 @@
       "source": "yahoo",
       "count": 2900,
       "first": "2015-01-02",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "HK01810",
@@ -264,7 +304,7 @@
       "source": "yahoo",
       "count": 2034,
       "first": "2018-07-09",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "HK09988",
@@ -272,7 +312,7 @@
       "source": "yahoo",
       "count": 1691,
       "first": "2019-11-26",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "HK09633",
@@ -280,7 +320,7 @@
       "source": "yahoo",
       "count": 1497,
       "first": "2020-09-08",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "HK02513",
@@ -288,7 +328,7 @@
       "source": "yahoo",
       "count": 187,
       "first": "2026-01-08",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     },
     {
       "key": "HK09992",
@@ -296,33 +336,13 @@
       "source": "yahoo",
       "count": 1433,
       "first": "2020-12-11",
-      "last": "2026-10-12"
+      "last": "2026-10-13"
     }
   ],
   "failed": [
     {
-      "key": "SH000300",
-      "error": "\n  eastmoney: 所有镜像均失败 → 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
-    },
-    {
-      "key": "SH000852",
-      "error": "\n  eastmoney: 所有镜像均失败 → 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
-    },
-    {
-      "key": "SZ399006",
-      "error": "\n  eastmoney: 所有镜像均失败 → push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
-    },
-    {
-      "key": "SH000688",
-      "error": "\n  eastmoney: 所有镜像均失败 → 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
-    },
-    {
-      "key": "SH000922",
-      "error": "\n  eastmoney: 所有镜像均失败 → push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 拿到的不是日线数据（间隔过大），拒绝使用\n  tencent: 返回结构里找不到日线序列\n  163: 请求失败（重试 4 次）: HTTP Error 502: Bad Gateway"
-    },
-    {
       "key": "HKIHSTECH",
-      "error": "\n  eastmoney: 所有镜像均失败 → 63.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 7.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response ; 43.push2his.eastmoney.com: 请求失败（重试 4 次）: Remote end closed connection without response\n  yahoo: 请求失败（重试 4 次）: HTTP Error 404: Not Found\n  tencent: 港股指数不走腾讯\n  163: 网易不支持该市场（仅沪深）"
+      "error": "\n  eastmoney: 所有镜像均失败 → push2his.eastmoney.com: 返回空数据（代码或市场可能写错） ; 7.push2his.eastmoney.com: 返回空数据（代码或市场可能写错） ; 43.push2his.eastmoney.com: 返回空数据（代码或市场可能写错） ; 63.push2his.eastmoney.com: 返回空数据（代码或市场可能写错）\n  yahoo: 请求失败（重试 4 次）: HTTP Error 404: Not Found\n  tencent: 港股指数不走腾讯\n  163: 网易不支持该市场（仅沪深）"
     }
   ]
 }
