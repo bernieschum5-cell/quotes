@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13 09:46:20 UTC",
+  "updated": "2026-10-13 10:47:27 UTC",
   "adjust": "0",
   "ok": [
     {
@@ -342,7 +342,7 @@
   "failed": [
     {
       "key": "HKIHSTECH",
-      "error": "\n  eastmoney: 所有镜像均失败 → push2his.eastmoney.com: 返回空数据（代码或市场可能写错） ; 7.push2his.eastmoney.com: 返回空数据（代码或市场可能写错） ; 43.push2his.eastmoney.com: 返回空数据（代码或市场可能写错） ; 63.push2his.eastmoney.com: 返回空数据（代码或市场可能写错）\n  yahoo: 请求失败（重试 4 次）: HTTP Error 404: Not Found\n  tencent: 港股指数不走腾讯\n  163: 网易不支持该市场（仅沪深）"
+      "error": "\n  eastmoney: 所有镜像均失败 → 43.push2his.eastmoney.com: 返回空数据（代码或市场可能写错） ; 7.push2his.eastmoney.com: 返回空数据（代码或市场可能写错） ; 63.push2his.eastmoney.com: 返回空数据（代码或市场可能写错） ; push2his.eastmoney.com: 返回空数据（代码或市场可能写错）\n  yahoo: 请求失败（重试 4 次）: HTTP Error 404: Not Found\n  tencent: 港股指数不走腾讯\n  163: 网易不支持该市场（仅沪深）"
     }
   ]
 }
